@@ -1,7 +1,3 @@
-@php
-$comics = config('comics');   
-@endphp
-
 @extends('layouts.main')
 
 @section('main-content')
@@ -15,8 +11,7 @@ $comics = config('comics');
                 @foreach ($comics as $comic)
                     <div class="col">
                         <figure>
-                            {{-- <a href="{{ route('comics.show', ['id' => $loop->index]) }}"> --}}
-                            <a href="#">
+                            <a href="{{ route('comics.show', $comic->id) }}">
                                 <div>
                                     <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
                                 </div>
@@ -26,7 +21,7 @@ $comics = config('comics');
                     </div>
                     @endforeach
                 </div>
-            <button>LOAD MORE</button>
+            <a id="add" href="{{ route('comics.create') }}">ADD COMIC</a>
         </div>
     </section>
     <!-- Tabs section -->

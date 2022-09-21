@@ -133,7 +133,7 @@ section.jumbotron {
   padding: 15px;
 }
 
-.series-list .container button {
+.series-list .container #add {
   color: #fff;
   border: 0;
   background-color: #0282F9;
