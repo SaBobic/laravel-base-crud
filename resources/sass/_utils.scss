@@ -1,0 +1,24 @@
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.bg-primary{
+    background-color: $primary_color;
+}
+
+.c-primary{
+    color: $primary_color;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.align-center{
+    align-items: center;
+}

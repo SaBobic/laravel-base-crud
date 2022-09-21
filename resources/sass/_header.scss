@@ -1,0 +1,38 @@
+#main-header {
+    nav {
+        padding: 20px 0;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    nav,
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    img {
+        height: 80px;
+        display: block;
+    }
+    ul li {
+        margin: 0 15px;
+        a {
+            position: relative;
+            &.active,
+            &:hover {
+                color: $primary_color;
+            }
+            &:hover::after,
+            &.active::after {
+                content: '';
+                width: 100%;
+                height: 6px;
+                background-color: $primary_color;
+                position: absolute;
+                bottom: calc(-60px + 50%);
+                left: 0;
+            }
+        }
+    }
+}

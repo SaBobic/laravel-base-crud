@@ -1,0 +1,84 @@
+@import 'mixins';
+@import 'vars';
+
+section.jumbotron {
+    height: 400px;
+    @include bg-image('/img/jumbotron.jpg');
+}
+
+.series-list {
+    background-color: $secondary-color;
+    color: #fff;
+    .container {
+        padding: 30px 0;
+        position: relative;
+        text-align: center;
+        padding-bottom: 30px;
+        .label {
+            display: inline-block;
+            background-color: $primary-color;
+            padding: 10px 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .row {
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            .col {
+                width: calc(100% / 6);
+                padding: 15px;
+            }
+        }
+        button {
+            color: #fff;
+            border: 0;
+            background-color: $primary-color;
+            padding: 10px 60px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+    figure {
+        font-size: 14px;
+        text-transform: uppercase;
+        div {
+            height: 180px;
+            overflow-y: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        figcaption {
+            color: #fff;
+            padding: 15px 0;
+            text-align: left;
+        }
+    }
+}
+
+#tabs {
+    color: #fff;
+    .row {
+        padding: 50px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .col {
+            figure {
+                display: flex;
+                align-items: center;
+                img {
+                    height: 50px;
+                    margin-right: 10px;
+                }
+            }
+            &:last-of-type img{
+                height: 25px;
+            }
+        }
+    }
+}

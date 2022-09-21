@@ -1,0 +1,30 @@
+.divider {
+    height: 70px;
+    >div{
+        height: 100%;
+        position: relative;
+        img {
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+        }
+    }
+}
+
+.comic-info {
+    flex-basis: 70%;
+    padding: 60px 0;
+}
+
+.price {
+    margin: 20px 0;
+    background-color: #55BA59;
+    border-bottom: 1px solid #000;
+    >div:first-of-type{
+        flex-grow: 1;
+        border-right: 1px solid #000;
+    }
+    >div{
+        padding: 15px 25px;
+    }
+}
