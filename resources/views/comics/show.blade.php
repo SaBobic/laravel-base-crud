@@ -31,7 +31,11 @@
         </ul>
         <a href="{{ route('comics.index') }}" class="btn btn-primary">BACK TO COMICS</a>
         <a class="btn btn-success" href="{{ route('comics.edit', $comic->id) }}">EDIT COMIC</a>
-
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit">DELETE COMIC</button>
+        </form>
     </div>
 </main>
 @endsection

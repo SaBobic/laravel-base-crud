@@ -19,7 +19,11 @@
                                 <figcaption>{{ $comic->series }}</figcaption>
                             </a>
                             <a class="btn btn-success" href="{{ route('comics.edit', $comic->id) }}">EDIT COMIC</a>
-                            <a class="btn btn-danger" href="{{ route('comics.create') }}">DELETE COMIC</a>
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit">DELETE COMIC</button>
+                            </form>
                         </figure>
                     </div>
                     @endforeach
