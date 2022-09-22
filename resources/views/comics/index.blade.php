@@ -1,8 +1,9 @@
 @extends('layouts.main')
 
 @section('main-content')
+<main id="comics">
     <!-- Series section -->
-    <section class="series-list">
+    <section class="comics-list">
         <div class="container">
             <div class="label bg-primary">
                 <h2>CURRENT SERIES</h2>
@@ -13,19 +14,21 @@
                         <figure>
                             <a href="{{ route('comics.show', $comic->id) }}">
                                 <div>
-                                    <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                                    <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                                 </div>
-                                <figcaption>{{ $comic['series'] }}</figcaption>
+                                <figcaption>{{ $comic->series }}</figcaption>
                             </a>
+                            <a class="btn btn-success" href="{{ route('comics.edit', $comic->id) }}">EDIT COMIC</a>
+                            <a class="btn btn-danger" href="{{ route('comics.create') }}">DELETE COMIC</a>
                         </figure>
                     </div>
                     @endforeach
                 </div>
-            <a id="add" href="{{ route('comics.create') }}">ADD COMIC</a>
+            <a class="btn btn-primary" href="{{ route('comics.create') }}">ADD COMIC</a>
         </div>
     </section>
     <!-- Tabs section -->
-    <section id="tabs" class="bg-primary">
+    <section class="tabs bg-primary">
         <div class="row container">
             <div class="col">
                 <figure>
@@ -59,4 +62,5 @@
             </div>
         </div>
     </section>
+</main>
 @endsection

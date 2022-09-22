@@ -1,50 +1,37 @@
 @extends('layouts.main')
 
 @section('main-content')
-
-<div class="divider bg-primary">
-    <div class="container">
-        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+<main id="comic-info">
+    <div class="divider bg-primary">
+        <div class="thumb comic-container">
+            <div>
+                <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                <div class="label top">{{ $comic->type }}</div>
+                <div class="label bottom">view gallery</div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="container d-flex">
-    <div class="comic-info">
+    <div class="comic-container comic-overview">
         <h1 class="title">{{ $comic->title }}</h1>
-        <div class="price d-flex justify-between">
+        <div class="availability d-flex justify-between">
             <div class="d-flex justify-between">
-                <div>U.S. Price: <span>{{ $comic->price }}</span></div>
-                <div>AVAILABLE</div>
+                <div class="label">U.S. Price: <span class="price">{{ $comic->price }}</span></div>
+                <div class="status">AVAILABLE</div>
             </div>
-            <div>Check Availability</div>
+            <div class="check">Check Availability</div>
         </div>
-        <p class="description">{!! $comic->description !!}</p>
-    </div>
-    <aside>
-        <div>ADVERTISEMENT</div>
-        <img src="{{ asset('/img/adv.jpg') }}" alt="">
-    </aside>
-</div>
+        <p class="description mb-5">{!! $comic->description !!}</p>
 
-<div>
-    <div class="container">
-        <h3>Specs</h3>
-        <div class="d-flex justify-between mb-5">
-            <div class="d-flex">
-                <div>Series:</div>
-                <div>{{ $comic->series }}</div>
-            </div>
-            <div class="d-flex">
-                <div>U.S. Price:</div>
-                <div>{{ $comic->price }}</div>
-            </div>
-            <div class="d-flex">
-                <div>On Sale Date:</div>
-                <div>{{ $comic->sale_date }}</div>
-            </div>
-        </div>
-        <a href="/" class="btn btn-primary">Torna alla home</a>
-    </div>
-</div>
+        <h2>Specs</h2>
+        <ul>
+            <li>Series: {{ $comic->series }}</li>
+            <li>U.S. Price: {{ $comic->price }}</li>
+            <li>On Sale Date: {{ $comic->sale_date }}</li>
+        </ul>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary">BACK TO COMICS</a>
+        <a class="btn btn-success" href="{{ route('comics.edit', $comic->id) }}">EDIT COMIC</a>
 
+    </div>
+</main>
 @endsection

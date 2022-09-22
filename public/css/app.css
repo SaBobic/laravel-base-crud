@@ -51,6 +51,25 @@ ul li {
   align-items: center;
 }
 
+.btn {
+  padding: 10px 15px;
+  color: #fff;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.btn.btn-primary {
+  background-color: #0282F9;
+}
+
+.btn.btn-danger {
+  background-color: red;
+}
+
+.btn.btn-success {
+  background-color: green;
+}
+
 #main-header nav {
   padding: 20px 0;
   font-size: 12px;
@@ -70,21 +89,21 @@ ul li {
   display: block;
 }
 
-#main-header ul li {
+#main-header li {
   margin: 0 15px;
 }
 
-#main-header ul li a {
+#main-header li a {
   position: relative;
 }
 
-#main-header ul li a.active,
-#main-header ul li a:hover {
+#main-header li a.active,
+#main-header li a:hover {
   color: #0282F9;
 }
 
-#main-header ul li a:hover::after,
-#main-header ul li a.active::after {
+#main-header li a:hover::after,
+#main-header li a.active::after {
   content: "";
   width: 100%;
   height: 6px;
@@ -94,25 +113,25 @@ ul li {
   left: 0;
 }
 
-section.jumbotron {
+#main-header .jumbotron {
   height: 400px;
   background-image: url("/img/jumbotron.jpg");
   background-repeat: no-repeat;
 }
 
-.series-list {
+#comics .comics-list {
   background-color: #1C1C1C;
   color: #fff;
 }
 
-.series-list .container {
+#comics .comics-list .container {
   padding: 30px 0;
   position: relative;
   text-align: center;
   padding-bottom: 30px;
 }
 
-.series-list .container .label {
+#comics .comics-list .container .label {
   display: inline-block;
   background-color: #0282F9;
   padding: 10px 30px;
@@ -122,105 +141,170 @@ section.jumbotron {
   transform: translateY(-50%);
 }
 
-.series-list .container .row {
+#comics .comics-list .container .row {
   padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
 }
 
-.series-list .container .row .col {
+#comics .comics-list .container .row .col {
   width: 16.6666666667%;
   padding: 15px;
 }
 
-.series-list .container #add {
-  color: #fff;
-  border: 0;
-  background-color: #0282F9;
-  padding: 10px 60px;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.series-list figure {
+#comics .comics-list figure {
   font-size: 14px;
   text-transform: uppercase;
 }
 
-.series-list figure div {
+#comics .comics-list figure div {
   height: 180px;
   overflow-y: hidden;
 }
 
-.series-list figure div img {
+#comics .comics-list figure div img {
   width: 100%;
 }
 
-.series-list figure figcaption {
+#comics .comics-list figure figcaption {
   color: #fff;
   padding: 15px 0;
   text-align: left;
 }
 
-#tabs {
+#comics .tabs {
   color: #fff;
 }
 
-#tabs .row {
+#comics .tabs .row {
   padding: 50px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#tabs .row .col figure {
+#comics .tabs .row .col figure {
   display: flex;
   align-items: center;
 }
 
-#tabs .row .col figure img {
+#comics .tabs .row .col figure img {
   height: 50px;
   margin-right: 10px;
 }
 
-#tabs .row .col:last-of-type img {
+#comics .tabs .row .col:last-of-type img {
   height: 25px;
 }
 
-.divider {
+form {
+  margin: 50px 0;
+  text-align: center;
+}
+
+form .form-row {
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 30%;
+  height: 30px;
+}
+
+form textarea {
+  width: 50%;
+}
+
+form button {
+  cursor: pointer;
+}
+
+#comic-info .comic-container {
+  margin: 0 auto;
+  max-width: 1000px;
+  height: auto;
+}
+
+#comic-info h1 {
+  text-transform: uppercase;
+}
+
+#comic-info h1,
+#comic-info h2,
+#comic-info h3 {
+  color: #003F5E;
+}
+
+#comic-info .divider {
   height: 70px;
 }
 
-.divider > div {
+#comic-info .thumb {
   height: 100%;
   position: relative;
 }
 
-.divider > div img {
+#comic-info .thumb > div {
   position: absolute;
   left: 0;
   bottom: 20px;
 }
 
-.comic-info {
-  flex-basis: 70%;
+#comic-info .thumb > div img {
+  border: 1px solid #fff;
+}
+
+#comic-info .thumb > div .label {
+  text-align: center;
+  font-size: 14px;
+  background-color: #00A9D9;
+  color: #fff;
+  position: absolute;
+  text-transform: uppercase;
+  left: 1px;
+  padding: 0 10px;
+}
+
+#comic-info .thumb > div .top {
+  top: 1px;
+}
+
+#comic-info .thumb > div .bottom {
+  bottom: 5px;
+  right: 1px;
+}
+
+#comic-info .comic-overview {
   padding: 60px 0;
 }
 
-.price {
+#comic-info .availability {
+  color: #fff;
   margin: 20px 0;
   background-color: #55BA59;
   border-bottom: 1px solid #000;
 }
 
-.price > div:first-of-type {
+#comic-info .availability > div:first-of-type {
   flex-grow: 1;
   border-right: 1px solid #000;
 }
 
-.price > div {
+#comic-info .availability > div {
   padding: 15px 25px;
+}
+
+#comic-info .description {
+  margin-bottom: 25px;
+}
+
+#comic-info ul {
+  margin-bottom: 20px;
+}
+
+#comic-info .price,
+#comic-info .check {
+  color: #fff;
 }
 
 #main-footer-top {

@@ -1,13 +1,10 @@
 @import 'mixins';
 @import 'vars';
 
-section.jumbotron {
-    height: 400px;
-    @include bg-image('/img/jumbotron.jpg');
-}
+#comics {
 
-.series-list {
-    background-color: $secondary-color;
+    .comics-list {
+        background-color: $secondary-color;
     color: #fff;
     .container {
         padding: 30px 0;
@@ -32,15 +29,6 @@ section.jumbotron {
                 padding: 15px;
             }
         }
-        #add {
-            color: #fff;
-            border: 0;
-            background-color: $primary-color;
-            padding: 10px 60px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-        }
     }
     figure {
         font-size: 14px;
@@ -60,25 +48,27 @@ section.jumbotron {
     }
 }
 
-#tabs {
-    color: #fff;
-    .row {
-        padding: 50px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .col {
-            figure {
-                display: flex;
-                align-items: center;
-                img {
-                    height: 50px;
-                    margin-right: 10px;
+    .tabs {
+        color: #fff;
+        .row {
+            padding: 50px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .col {
+                figure {
+                    display: flex;
+                    align-items: center;
+                    img {
+                        height: 50px;
+                        margin-right: 10px;
+                    }
                 }
-            }
-            &:last-of-type img{
-                height: 25px;
+                &:last-of-type img{
+                    height: 25px;
+                }
             }
         }
     }
+
 }

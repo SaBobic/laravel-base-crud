@@ -1,0 +1,18 @@
+form {
+    margin: 50px 0;
+    text-align: center;
+    .form-row {
+        margin-bottom: 10px;
+    }
+    input{
+        width: 30%;
+        height: 30px;
+    }
+    textarea{
+        width: 50%;
+    }
+
+    button{
+        cursor: pointer;
+    }
+}

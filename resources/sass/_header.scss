@@ -15,7 +15,7 @@
         height: 80px;
         display: block;
     }
-    ul li {
+    li {
         margin: 0 15px;
         a {
             position: relative;
@@ -34,5 +34,10 @@
                 left: 0;
             }
         }
+    }
+
+    .jumbotron {
+        height: 400px;
+        @include bg-image('/img/jumbotron.jpg');
     }
 }

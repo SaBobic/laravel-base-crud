@@ -17,11 +17,7 @@
         <!-- Header -->
         @include('includes.header')
         <!-- Main -->
-        <main>
-            <!-- Jumbotron -->
-            <section class="jumbotron"></section>
-            @yield('main-content')
-        </main>
+        @yield('main-content')
         <!-- Footer -->
         @include('includes.footer')
     </body>
