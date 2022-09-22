@@ -31,10 +31,10 @@
         </ul>
         <a href="{{ route('comics.index') }}" class="btn btn-primary">BACK TO COMICS</a>
         <a class="btn btn-success" href="{{ route('comics.edit', $comic->id) }}">EDIT COMIC</a>
-        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+        <form class="delete-form" action="{{ route('comics.destroy', $comic->id) }}" method="POST" data-delete="{{ $comic->title }}">
             @csrf
             @method('DELETE')
-            <button class="btn btn-danger" type="submit" data-delete="{{ $comic->title }}">DELETE COMIC</button>
+            <button class="btn btn-danger" type="submit">DELETE COMIC</button>
         </form>
     </div>
 </main>
