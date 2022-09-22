@@ -8,7 +8,7 @@
         <div>
             <ul class="d-flex">
                 <li><a href="{{ url('/') }}" class="{{ Route::is('home') ? 'active' : '' }}">Home</a></li>
-                <li><a href="{{ route('comics.index') }}" class="{{ Route::is('comics.index') ? 'active' : '' }}">Comics</a></li>
+                <li><a href="{{ route('comics.index') }}" class="{{ Request::is('comics*') ? 'active' : '' }}">Comics</a></li>
             </ul>
         </div>
     </nav>
