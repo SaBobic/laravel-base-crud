@@ -11,6 +11,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        <!-- JS -->
+        <script defer src="{{ asset('js/app.js') }}"></script>
     </head>
 
     <body>
@@ -20,5 +23,7 @@
         @yield('main-content')
         <!-- Footer -->
         @include('includes.footer')
+
+        @yield('extra-js')
     </body>
 </html>

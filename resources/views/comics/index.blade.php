@@ -22,7 +22,7 @@
                             <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit">DELETE COMIC</button>
+                                <button class="delete-button btn btn-danger" type="submit" data-delete="{{ $comic->title }}">DELETE COMIC</button>
                             </form>
                         </figure>
                     </div>
@@ -67,4 +67,8 @@
         </div>
     </section>
 </main>
+@endsection
+
+@section('extra-js')
+    <script src="{{ asset('js/confirmDelete.js') }}"></script>
 @endsection
